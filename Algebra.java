@@ -64,8 +64,8 @@ public class Algebra {
 			}
 		} else {
 			if (x1 < 0 && x2 > 0) {
-				for (int j=0; j<x2; j++) {
-					sum = minus(sum, x1);
+				for (int j=0; j<x2-1; j++) {
+					sum = plus(sum, x1);
 				}
 			} else if (x1 < 0 && x2 < 0) {
 				for (int k=x2; k<=0; k++) {
@@ -73,7 +73,7 @@ public class Algebra {
 				}
 			} else if (x1 < 0 && x2 >0) {
 					for (int n=x2; n<=0; n++) {
-						sum = minus(sum, x1);
+						sum = plus(sum, x1);
 					}
 				}
 			}
@@ -116,7 +116,12 @@ public class Algebra {
 				counter ++ ;
 			}
 		}
-		return counter;
+		if (sum == 0) {
+			return counter;
+		} else {
+			counter -- ;
+			return counter;
+		}
 	}
 
 	// Returns x1 % x2
