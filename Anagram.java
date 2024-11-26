@@ -34,7 +34,7 @@ public class Anagram {
 		if (str1.length() != str2.length()) {
 			return false;
 		}
-		for (int i=0; 1<str1.length(); i++) {
+		for (int i=0; i<str1.length(); i++) {
 			sw = 0;
 			for (int j=0; j<str2.length(); j++) {
 				if (str1.charAt(i) == str2.charAt(j)) {
@@ -46,7 +46,6 @@ public class Anagram {
 					} else {
 						str2 = (str2.substring( 0 , (j) )) + (str2.substring(j+1));
 					}
-					break;
 				}
 			}
 			if (sw == 0) {
