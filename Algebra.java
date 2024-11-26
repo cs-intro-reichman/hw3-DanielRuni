@@ -69,7 +69,7 @@ public class Algebra {
 				}
 			} else if (x1 < 0 && x2 < 0) {
 				for (int k=x2; k<=0; k++) {
-					sum = plus(sum, x1);
+					sum = minus(sum, x1);
 				}
 			} else if (x1 < 0 && x2 >0) {
 					for (int n=x2; n<=0; n++) {
