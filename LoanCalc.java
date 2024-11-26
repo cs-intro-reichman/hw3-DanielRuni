@@ -2,7 +2,7 @@
 public class LoanCalc {
 	
 	static double epsilon = 0.001;  // Approximation accuracy
-	static int iterationCounter = 0;    // Number of iterations 
+	static int iterationCounter;    // Number of iterations 
 	
 	// Gets the loan data and computes the periodical payment.
     // Expects to get three command-line arguments: loan amount (double),
@@ -42,11 +42,13 @@ public class LoanCalc {
 	// the number of periods (n), and epsilon, the approximation's accuracy
 	// Side effect: modifies the class variable iterationCounter.
     public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {
-		double increment = 1, g = loan / n;
+		double increment = 0.0001, g = loan / n;
+		iterationCounter = 0;
 		while ((endBalance(loan, rate, n, g)) > epsilon) {
 			g += increment;
 			iterationCounter ++ ;
 		}
+		System.out.println("iterations: " + iterationCounter);
 		if ((endBalance(loan, rate, n, g)) < 0) {
 			return (g-1);
 		}
@@ -61,7 +63,7 @@ public class LoanCalc {
 	// the number of periods (n), and epsilon, the approximation's accuracy
 	// Side effect: modifies the class variable iterationCounter.
     public static double bisectionSolver(double loan, double rate, int n, double epsilon) {  
-        // Replace the following statement with your code
+        iterationCounter = 0;
 		return 0;
     }
 }
