@@ -39,7 +39,6 @@ public class Anagram {
 				}
 			}
 		}
-		System.out.println(str1);
 		str2 = preProcess(str2);
 		for (int m=0; m<str2.length(); m++) {
 			if (str2.charAt(m) == 32) {
@@ -50,7 +49,6 @@ public class Anagram {
 				}
 			}
 		}
-		System.out.println(str2);
 		if (str1.length() != str2.length()) {
 			return false;
 		}
@@ -86,7 +84,6 @@ public class Anagram {
 				fixedWord = fixedWord + str.charAt(i);
 			}
 		}
-		System.out.println(str);
 		fixedWord = fixedWord.toLowerCase();
 		return fixedWord;
 	} 
