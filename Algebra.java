@@ -21,6 +21,8 @@ public class Algebra {
    		System.out.println(sqrt(36)); // V
 		System.out.println(sqrt(263169)); // V
    		System.out.println(sqrt(76123)); // V
+		System.out.println("-2 * -2 = " + times(-2, -2));
+		System.out.println("4 * -2 = " + times(4, -2));
 	}  
 
 	// Returns x1 + x2
@@ -59,26 +61,25 @@ public class Algebra {
 			return 0; }
 		int sum = x1;
 		if (x1 > 0 && x2 > 0) {
-			for (int i=0; i<x2-1; i++) {
+			for (int i=1; i<x2; i++) {
+				sum = plus(sum, x1);
+			}
+		}
+		else if ((x1 > 0) && (x2 < 0)) {
+			for (int j=x2; j<=0; j++) {
+				sum = minus (sum , x1);
+			}
+		} else if ((x1 < 0) && (x2 > 0)) {
+			for (int k=1; k<x2; k++) {
 				sum = plus(sum, x1);
 			}
 		} else {
-			if (x1 < 0 && x2 > 0) {
-				for (int j=0; j<x2-1; j++) {
-					sum = plus(sum, x1);
-				}
-			} else if (x1 < 0 && x2 < 0) {
-				for (int k=x2; k<=0; k++) {
-					sum = minus(sum, x1);
-				}
-			} else if (x1 < 0 && x2 >0) {
-					for (int n=x2; n<=0; n++) {
-						sum = plus(sum, x1);
-					}
-				}
+			for (int m=x2; m<=0; m++) {
+				sum = minus(sum, x1);
 			}
-			return sum;
 		}
+		return sum;
+	}
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {

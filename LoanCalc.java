@@ -48,7 +48,6 @@ public class LoanCalc {
 			g += increment;
 			iterationCounter ++ ;
 		}
-		System.out.println("iterations: " + iterationCounter);
 		if ((endBalance(loan, rate, n, g)) < 0) {
 			return (g-1);
 		}
