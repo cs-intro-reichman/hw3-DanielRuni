@@ -48,12 +48,7 @@ public class LoanCalc {
 			g += increment;
 			iterationCounter ++ ;
 		}
-		if ((endBalance(loan, rate, n, g)) < 0) {
-			return (g-1);
-		}
-		else {
-			return g;
-		}
+		return g;
     }
     
     // Uses bisection search to compute an approximation of the periodical payment 
