@@ -30,7 +30,27 @@ public class Anagram {
 	public static boolean isAnagram(String str1, String str2) {
 		int sw = 0;
 		str1 = preProcess(str1);
+		for (int k=0; k<str1.length(); k++) {
+			if (str1.charAt(k) == 32) {
+				if (k == 0) {
+					str1 = (str1.substring(1));
+				} else {
+					str1 = (str1.substring(0,k)) + (str1.substring(k+1));	
+				}
+			}
+		}
+		System.out.println(str1);
 		str2 = preProcess(str2);
+		for (int m=0; m<str2.length(); m++) {
+			if (str2.charAt(m) == 32) {
+				if (m == 0) {
+					str2 = (str2.substring(1));
+				} else {
+					str2 = (str2.substring(0,m)) + (str2.substring(m+1));	
+				}
+			}
+		}
+		System.out.println(str2);
 		if (str1.length() != str2.length()) {
 			return false;
 		}
@@ -46,6 +66,7 @@ public class Anagram {
 					} else {
 						str2 = (str2.substring( 0 , (j) )) + (str2.substring(j+1));
 					}
+					break;
 				}
 			}
 			if (sw == 0) {
@@ -61,10 +82,11 @@ public class Anagram {
 	public static String preProcess(String str) {
 		String fixedWord = "";
 		for (int i=0; i<str.length(); i++) {
-			if (((str.charAt(i) >= 65) && (str.charAt(i) <= 90)) || ((str.charAt(i) >= 97) && (str.charAt(i) <= 122))) {
+			if (((str.charAt(i) >= 65) && (str.charAt(i) <= 90)) || ((str.charAt(i) >= 97) && (str.charAt(i) <= 122)) || (str.charAt(i) == 32)) {
 				fixedWord = fixedWord + str.charAt(i);
 			}
 		}
+		System.out.println(str);
 		fixedWord = fixedWord.toLowerCase();
 		return fixedWord;
 	} 
